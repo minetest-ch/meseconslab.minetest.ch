@@ -15,6 +15,7 @@ services:
     - "30001:30001/udp"
   networks:
    - terminator
+   - default
   entrypoint: ["minetestserver", "--config", "/minetest.conf"]
 
  matterbridge:

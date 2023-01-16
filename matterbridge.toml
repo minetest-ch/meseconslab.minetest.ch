@@ -9,7 +9,7 @@ ColorNicks=true
 [discord]
 [discord.Discord]
 Token="{{discord_token}}"
-Server="513329453741637637"
+Server="908019153212964904"
 RemoteNickFormat="[{BRIDGE}] <{NICK}> "
 UseUserName=true
 AllowMention=["users"]

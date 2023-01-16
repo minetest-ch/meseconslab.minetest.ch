@@ -5,3 +5,18 @@ minetest.register_on_leaveplayer(function()
         minetest.request_shutdown("map reset", true)
     end
 end)
+
+-- emerge spawn area
+minetest.register_on_mods_loaded(function()
+    minetest.after(0, function()
+        minetest.emerge_area({
+            x = -50,
+            y = -50,
+            z = -50
+        },{
+            x = 50,
+            y = 50,
+            z = 50
+        })
+    end)
+end)

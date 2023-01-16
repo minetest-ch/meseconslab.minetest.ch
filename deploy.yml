@@ -6,7 +6,7 @@
   tasks:
     - name: Checkout git master
       ansible.builtin.git:
-        repo: https://github.com/mesecons-lab/mesecons_lab
+        repo: https://github.com/mesecons-lab/meseconslab.minetest.ch
         dest: "{{ compose_directory }}"
         single_branch: yes
         force: yes

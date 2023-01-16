@@ -19,7 +19,7 @@
 
     - name: Template matterbridge config
       template:
-        src: "config/matterbridge.toml"
+        src: "matterbridge.toml"
         dest: "{{compose_directory}}/matterbridge.toml"
 
     - name: Create and start services

@@ -10,7 +10,7 @@
         dest: "{{ compose_directory }}"
         single_branch: yes
         force: yes
-        version: master
+        version: main
 
     - name: Create and start services
       community.general.docker_compose:

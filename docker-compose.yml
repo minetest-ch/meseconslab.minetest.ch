@@ -17,6 +17,14 @@ services:
    - terminator
   entrypoint: ["minetestserver", "--config", "/minetest.conf"]
 
+ matterbridge:
+   image: 42wim/matterbridge:1.25.2
+   dns:
+    - 8.8.4.4
+    - 8.8.8.8
+   volumes:
+    - ./matterbridge.toml:/etc/matterbridge/matterbridge.toml
+
 networks:
  terminator:
   external: true

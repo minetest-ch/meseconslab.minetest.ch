@@ -4,3 +4,6 @@
 [submodule "worldmods/monitoring"]
 	path = worldmods/monitoring
 	url = https://github.com/minetest-monitoring/monitoring
+[submodule "worldmods/beerchat"]
+	path = worldmods/beerchat
+	url = https://github.com/mt-mods/beerchat/

@@ -1,0 +1,34 @@
+[irc]
+[irc.Libera]
+Server="irc.libera.chat:6667"
+Nick="meseconslab"
+Password="{{irc_password}}"
+RemoteNickFormat="[{BRIDGE}] <{NICK}> "
+ColorNicks=true
+
+[discord]
+[discord.Discord]
+Token="{{discord_token}}"
+Server="513329453741637637"
+RemoteNickFormat="[{BRIDGE}] <{NICK}> "
+UseUserName=true
+AllowMention=["users"]
+
+[api.minetest]
+BindAddress="0.0.0.0:4242"
+Token="{{matterbridge_token}}"
+Buffer=1000
+RemoteNickFormat="[{BRIDGE}] {NICK}"
+
+[[gateway]]
+name="main"
+enable=true
+[[gateway.inout]]
+account="irc.Libera"
+channel="#meseconslab"
+[[gateway.inout]]
+account = "discord.Discord"
+channel="ingame"
+[[gateway.inout]]
+account="api.minetest"
+channel="api"

@@ -6,7 +6,7 @@ services:
   restart: always
   user: root
   volumes:
-   - "world_dir:/root/.minetest/worlds/world"
+   - "./data/world:/root/.minetest/worlds/world"
    - "./game:/root/.minetest/worlds/world/game"
    - "./worldmods:/root/.minetest/worlds/world/worldmods"
    - "./world.mt:/root/.minetest/worlds/world/world.mt"
@@ -14,6 +14,3 @@ services:
   ports:
     - "30001:30001/udp"
   entrypoint: ["minetestserver", "--config", "/minetest.conf"]
-
-volumes:
-  world_dir: {}

@@ -13,4 +13,10 @@ services:
    - "./minetest.conf:/minetest.conf"
   ports:
     - "30001:30001/udp"
+  networks:
+   - terminator
   entrypoint: ["minetestserver", "--config", "/minetest.conf"]
+
+networks:
+ terminator:
+  external: true

@@ -1,0 +1,6 @@
+text := import("text")
+if nick == "SYSTEM" && bridge == "minetest" {
+ result = "["+bridge+"] "
+} else {
+ result = "["+bridge+"] <"+nick+"> "
+}

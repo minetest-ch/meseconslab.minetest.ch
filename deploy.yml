@@ -1,0 +1,20 @@
+---
+- hosts: all
+  remote_user: root
+  vars:
+    compose_directory: /data/meseconslab.minetest.ch
+  tasks:
+    - name: Checkout git master
+      ansible.builtin.git:
+        repo: https://github.com/mesecons-lab/mesecons_lab
+        dest: "{{ compose_directory }}"
+        single_branch: yes
+        force: yes
+        version: master
+
+    - name: Create and start services
+      community.general.docker_compose:
+        project_src: "{{ compose_directory }}"
+        pull: yes
+        build: yes
+        remove_orphans: yes

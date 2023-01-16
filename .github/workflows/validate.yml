@@ -1,0 +1,12 @@
+name: validate
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: validate config
+      run: |
+        docker-compose config -q

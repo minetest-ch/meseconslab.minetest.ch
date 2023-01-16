@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+ minetest:
+  image: registry.gitlab.com/minetest/minetest/server:5.6.1
+  restart: always
+  user: root
+  volumes:
+   - "world_dir:/root/.minetest/worlds/world"
+   - "./game:/root/.minetest/worlds/world/game"
+   - "./worldmods:/root/.minetest/worlds/world/worldmods"
+   - "./world.mt:/root/.minetest/worlds/world/world.mt"
+   - "./minetest.conf:/minetest.conf"
+  ports:
+    - "30001:30001/udp"
+  entrypoint: ["minetestserver", "--config", "/minetest.conf"]
+
+volumes:
+  world_dir: {}

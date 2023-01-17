@@ -12,15 +12,14 @@
         force: yes
         version: main
 
-    - name: Template minetest config
+    - name: Template files
+      with_list:
+       - "minetest.conf"
+       - "matterbridge.toml"
+       - "docker-compose.yml"
       template:
-        src: "minetest.conf"
-        dest: "{{compose_directory}}/minetest.conf"
-
-    - name: Template matterbridge config
-      template:
-        src: "matterbridge.toml"
-        dest: "{{compose_directory}}/matterbridge.toml"
+        src: "{{item}}"
+        dest: "{{compose_directory}}/{{item}}"
 
     - name: Create and start services
       community.general.docker_compose:

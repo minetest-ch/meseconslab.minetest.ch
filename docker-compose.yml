@@ -44,7 +44,7 @@ services:
     - "traefik.enable=true"
     - "traefik.docker.network=terminator"
     - "traefik.http.routers.meseconslab.rule=Host(`meseconslab.minetest.ch`)"
-    - "traefik.http.services.meseconslab.loadbalancer.server.port=80"
+    - "traefik.http.services.meseconslab.loadbalancer.server.port=8080"
     - "traefik.http.routers.meseconslab.entrypoints=websecure"
     - "traefik.http.routers.meseconslab.tls.certresolver=default"
 

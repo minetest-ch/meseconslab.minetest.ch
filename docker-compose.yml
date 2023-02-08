@@ -27,7 +27,7 @@ services:
     - ./matterbridge.toml:/etc/matterbridge/matterbridge.toml
     - ./remotenickformat.tengo:/remotenickformat.tengo
 
- ui:
+ mesecons-lab-ui:
   image: ghcr.io/minetest-go/mtui:1.22
   networks:
    - terminator

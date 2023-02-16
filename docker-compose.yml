@@ -40,6 +40,7 @@ services:
    ENABLE_FEATURES: "shell,luashell,monitoring"
   volumes:
    - "./data/world:/root/.minetest/worlds/world"
+   - "./world.mt:/root/.minetest/worlds/world/world.mt"
   labels:
     - "traefik.enable=true"
     - "traefik.docker.network=terminator"

@@ -15,3 +15,13 @@ minetest.register_on_mods_loaded(function()
         mapsync.emerge_chunk({x=0, y=0, z=0})
     end)
 end)
+
+
+-- https://github.com/minetest/minetest/pull/9350
+-- Workaround for bug https://www.lua.org/bugs.html#5.2.3-1
+-- thx HybridDog ;)
+local actual_unpack = unpack
+function unpack(t, a, b)
+	assert(not b or b < 2^30)
+	return actual_unpack(t, a, b)
+end

@@ -16,3 +16,6 @@
 [submodule "worldmods/otp"]
 	path = worldmods/otp
 	url = https://github.com/mt-mods/otp
+[submodule "worldmods/announce"]
+	path = worldmods/announce
+	url = https://github.com/mt-mods/announce

@@ -2,7 +2,7 @@ version: "2"
 
 services:
  minetest:
-  image: registry.gitlab.com/minetest/minetest/server:5.7.0
+  image: ghcr.io/minetest-hosting/minetest-docker:5.8.0
   restart: always
   user: root
   volumes:

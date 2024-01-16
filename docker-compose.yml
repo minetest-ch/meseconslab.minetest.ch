@@ -28,7 +28,7 @@ services:
     - ./remotenickformat.tengo:/remotenickformat.tengo
 
  mesecons-lab-ui:
-  image: ghcr.io/minetest-go/mtui:1.57
+  image: ghcr.io/minetest-go/mtui:1.58
   networks:
    - terminator
    - default

@@ -17,6 +17,8 @@ services:
    - terminator
    - default
   entrypoint: ["minetestserver", "--config", "/minetest.conf"]
+  labels:
+    - "promtail=true"
 
  matterbridge:
    image: 42wim/matterbridge:1.26.0
@@ -26,6 +28,8 @@ services:
    volumes:
     - ./matterbridge.toml:/etc/matterbridge/matterbridge.toml
     - ./remotenickformat.tengo:/remotenickformat.tengo
+   labels:
+    - "promtail=true"
 
  mesecons-lab-ui:
   image: ghcr.io/minetest-go/mtui:1.62
@@ -43,6 +47,7 @@ services:
    - "./data/world:/root/.minetest/worlds/world"
    - "./world.mt:/root/.minetest/worlds/world/world.mt"
   labels:
+    - "promtail=true"
     - "traefik.enable=true"
     - "traefik.docker.network=terminator"
     - "traefik.http.routers.meseconslab.rule=Host(`meseconslab.minetest.ch`)"

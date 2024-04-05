@@ -5,12 +5,11 @@
     compose_directory: /data/meseconslab.minetest.ch
   tasks:
     - name: Checkout git
-      ansible.builtin.git:
-        repo: https://github.com/mesecons-lab/meseconslab.minetest.ch
-        dest: "{{ compose_directory }}"
-        single_branch: yes
-        force: yes
-        version: main
+      shell: |
+        git submodule --sync
+        git pull --recurse-submodules
+      args:
+        chdir: "{{ compose_directory }}"
 
     - name: Template files
       with_list:
@@ -22,8 +21,6 @@
         dest: "{{compose_directory}}/{{item}}"
 
     - name: Create and start services
-      community.general.docker_compose:
-        project_src: "{{ compose_directory }}"
-        pull: yes
-        build: yes
-        remove_orphans: yes
+      shell: docker-compose up -d --remove-orphans
+      args:
+        chdir: "{{ compose_directory }}"

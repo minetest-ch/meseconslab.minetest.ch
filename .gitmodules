@@ -1,6 +1,6 @@
 [submodule "game"]
 	path = game
-	url = https://github.com/mesecons-lab/mesecons_lab
+	url = https://github.com/buckaroobanzay/mesecons_lab
 [submodule "worldmods/monitoring"]
 	path = worldmods/monitoring
 	url = https://github.com/minetest-monitoring/monitoring

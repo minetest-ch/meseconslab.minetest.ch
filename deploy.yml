@@ -6,6 +6,7 @@
   tasks:
     - name: Checkout git
       shell: |
+        git reset --hard
         git submodule --sync
         git pull --recurse-submodules
       args:

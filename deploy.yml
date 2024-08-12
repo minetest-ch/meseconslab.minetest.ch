@@ -7,7 +7,7 @@
     - name: Checkout git
       shell: |
         git reset --hard
-        git submodule --sync
+        git submodule sync --recursive
         git pull --recurse-submodules
       args:
         chdir: "{{ compose_directory }}"

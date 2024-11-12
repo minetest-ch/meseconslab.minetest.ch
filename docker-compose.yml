@@ -32,7 +32,7 @@ services:
     - "promtail=true"
 
  mesecons-lab-ui:
-  image: ghcr.io/minetest-go/mtui:v1.73
+  image: ghcr.io/minetest-go/mtui:v1.74
   networks:
    - terminator
    - default
